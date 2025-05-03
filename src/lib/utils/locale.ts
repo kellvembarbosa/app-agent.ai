@@ -163,5 +163,5 @@ export const getAllStoreLocales = (): LocaleCode[] => {
   return Object.values(LocaleCode);
 };
 
-export const SUPPORTED_LOCALES = ['en', 'ja'];
+export const SUPPORTED_LOCALES = ['en', 'ja', 'pt-br'];
 export const USER_LOCALE_COOKIE_NAME = 'localePreference';

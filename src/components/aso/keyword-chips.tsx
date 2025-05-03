@@ -62,17 +62,24 @@ export default function KeywordChips({
   const handleAddKeyword = async (value: string) => {
     if (!value.trim()) return;
 
-    const keyword = value.trim();
-    setLoadingKeywords((prev) => new Set(prev).add(keyword));
+    // Split by commas and process each keyword
+    const keywords = value
+      .split(',')
+      .map((k) => k.trim())
+      .filter((k) => k !== '');
 
-    try {
-      await onAdd(keyword);
-    } finally {
-      setLoadingKeywords((prev) => {
-        const next = new Set(prev);
-        next.delete(keyword);
-        return next;
-      });
+    for (const keyword of keywords) {
+      setLoadingKeywords((prev) => new Set(prev).add(keyword));
+
+      try {
+        await onAdd(keyword);
+      } finally {
+        setLoadingKeywords((prev) => {
+          const next = new Set(prev);
+          next.delete(keyword);
+          return next;
+        });
+      }
     }
   };
 
@@ -173,7 +180,11 @@ export default function KeywordChips({
                 >
                   <Input
                     placeholder={t('add-keyword-placeholder')}
-                    className="h-8 w-[150px]"
+                    className="h-8 w-[220px]"
+                    title={
+                      t('add-multiple-keywords-hint') ||
+                      'Adicione múltiplas keywords separadas por vírgulas'
+                    }
                     onKeyDown={(e) => {
                       if (e.key === 'Enter') {
                         handleAddKeyword(e.currentTarget.value);

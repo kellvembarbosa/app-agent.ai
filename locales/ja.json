@@ -330,6 +330,7 @@
     "regenerate": "再生成",
     "confirm": "確認",
     "add-keyword-placeholder": "キーワードを追加...",
+    "add-multiple-keywords-hint": "複数のキーワードをカンマ区切りで追加できます",
     "working-hard": "処理中...",
     "completed": "完了",
     "error-occurred-during-competitor-research": "競合アプリの調査中にエラーが発生しました",

@@ -330,6 +330,7 @@
     "regenerate": "Regenerate",
     "confirm": "Confirm",
     "add-keyword-placeholder": "Add Keyword...",
+    "add-multiple-keywords-hint": "Add multiple keywords separated by commas",
     "working-hard": "Working hard...",
     "completed": "Completed",
     "error-occurred-during-competitor-research": "Error occurred during competitor research",
