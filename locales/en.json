@@ -453,7 +453,8 @@
     "language": "Language",
     "locales": {
       "en": "English",
-      "ja": "Japanese"
+      "ja": "Japanese",
+      "pt": "Portuguese (Brazil)"
     }
   },
   "layout": {
